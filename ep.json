@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "auth_session",
+      "hooks": {
+        "expressCreateServer" : "ep_auth_session/index:registerRoute"
+      }
+    }
+  ]
+}
