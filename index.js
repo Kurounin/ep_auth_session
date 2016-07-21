@@ -14,7 +14,12 @@ exports.registerRoute = function(hook_name, args, cb) {
 		}
 
 		if (req.query.padName) {
-			r += 'document.location.href="/p/' + req.query.padName + '";' + "\n";
+      var redirectUrl = '/p/';
+      if (req.query.groupID) {
+        redirectUrl += req.query.groupID + '$';
+      }
+      redirectUrl += req.query.padName
+			r += 'document.location.href="' + redirectUrl + '";' + "\n";
 		}
 
 		r += '</script>' + "\n";
