@@ -29,3 +29,7 @@ Include an iframe with the src set to etherpad page /auth_session?sessionID=SESS
 ```html
 <iframe src="http://pad.test.de/auth_session?sessionID=SESSION_ID&padName=PAD_NAME" width="600" height="400"></iframe>
 ```
+You can optionally include the groupID as well
+```html
+<iframe src="http://pad.test.de/auth_session?sessionID=SESSION_ID&groupID=GROUP_ID&padName=PAD_NAME" width="600" height="400"></iframe>
+```
