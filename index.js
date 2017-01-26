@@ -10,17 +10,17 @@ exports.registerRoute = function(hook_name, args, cb) {
 		r += '<script type="text/javascript">' + "\n";
 
 		if (req.query.sessionID) {
-			r += 'document.cookie = "sessionID=' + req.query.sessionID + '; path=/;";' + "\n";
+			r += 'document.cookie = "sessionID=' + encodeURIComponent(req.query.sessionID) + '; path=/;";' + "\n";
 		}
 
 		if (req.query.padName) {
 			var redirectUrl = '/p/';
 
 			if (req.query.groupID) {
-				redirectUrl += req.query.groupID + '$';
+				redirectUrl += encodeURIComponent(req.query.groupID) + '$';
 			}
 
-			redirectUrl += req.query.padName
+			redirectUrl += encodeURIComponent(req.query.padName);
 			r += 'document.location.href="' + redirectUrl + '";' + "\n";
 		}
 
