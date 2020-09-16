@@ -21,6 +21,11 @@ exports.registerRoute = function(hook_name, args, cb) {
 			}
 
 			redirectUrl += encodeURIComponent(req.query.padName);
+
+			if (req.query.lang) {
+				redirectUrl += "?lang=" + encodeURIComponent(req.query.lang);
+			}
+
 			r += 'document.location.href="' + redirectUrl + '";' + "\n";
 		}
 
