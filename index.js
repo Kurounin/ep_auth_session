@@ -10,7 +10,7 @@ exports.registerRoute = function(hook_name, args, cb) {
 		r += '<script type="text/javascript">' + "\n";
 
 		if (req.query.sessionID) {
-			r += 'document.cookie = "sessionID=' + encodeURIComponent(req.query.sessionID) + '; path=/; SameSite=Lax;";' + "\n";
+			r += 'document.cookie = "sessionID=' + encodeURIComponent(req.query.sessionID) + '; path=/; " + ((document.location.protocol == "https:") ? "SameSite=None; Secure;" : "SameSite=Lax;");' + "\n";
 		}
 
 		if (req.query.padName) {
