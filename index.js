@@ -1,4 +1,4 @@
-exports.registerRoute = function(hook_name, args, cb) {
+exports.registerRoute = (hookName, args) => {
 	args.app.get("/auth_session", function(req, res) {
 		var r = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">' + "\n";
 
