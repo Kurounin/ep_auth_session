@@ -1,6 +1,6 @@
 {
   "name": "ep_auth_session",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Provides a route that authenticates the user with the provided sessionID parameter and redirects to the given padName",
   "main": "index.js",
   "scripts": {
