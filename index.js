@@ -16,7 +16,7 @@ exports.registerRoute = (hookName, args) => {
     }
 
     if (req.query.padName) {
-      let redirectUrl = '/p/';
+      let redirectUrl = 'p/';
 
       if (req.query.groupID) {
         redirectUrl += encodeURIComponent(req.query.groupID) + '$';
