@@ -24,10 +24,8 @@ exports.registerRoute = (hookName, args) => {
 
       redirectUrl += encodeURIComponent(req.query.padName);
 
-      const query = {};
-
       for (const queryKey in req.query) {
-        if (!req.query.hasOwnProperty(queryKey) || queryKey === "sessionID" || queryKey === "groupID" || queryKey === "padName") {
+        if (!Object.prototype.hasOwnProperty.call(req.query, queryKey) || queryKey === "sessionID" || queryKey === "groupID" || queryKey === "padName") {
           continue;
         }
         
